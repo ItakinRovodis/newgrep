@@ -92,7 +92,7 @@ void ht_insert(HashTable* table, char* key, int value) {
 		table->count++;
 	} else {
 		if (strcmp(current_item->key, key) == 0) {
-			current_item->value = value;
+			current_item->value += 1; // Если элемент уже есть увеличиваем его значение на 1
 			return;
 		} else { // Коллизия
 			 handle_collision(table, index, item);
